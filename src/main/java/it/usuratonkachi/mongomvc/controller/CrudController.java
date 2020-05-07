@@ -28,7 +28,7 @@ public class CrudController {
     private final CompanyMapper companyMapper;
 
     @PostMapping(value = "/user/insert", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public UserResponseDto insertUser(@RequestBody UserInsertRequestDto req) {
+    public UserResponseDto insertUser(@Valid @RequestBody UserInsertRequestDto req) {
         User user = userMapper.mapperInsertDtoToEntity(req);
         user = userService.create(user);
         UserResponseDto userResponseDto = userMapper.mapperEntityToResponseDto(user);
