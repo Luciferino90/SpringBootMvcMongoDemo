@@ -5,4 +5,3 @@ spring:
   data:
     mongodb:
       port: 27018
-Shounen.Jump.46
