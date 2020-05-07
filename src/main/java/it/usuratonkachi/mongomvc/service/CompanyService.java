@@ -2,14 +2,16 @@ package it.usuratonkachi.mongomvc.service;
 
 import it.usuratonkachi.mongomvc.domain.entity.Company;
 import it.usuratonkachi.mongomvc.domain.repository.CompanyRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class CompanyService {
 
-    @Autowired private CompanyRepository companyRepository;
+    private final CompanyRepository companyRepository;
 
     public Company findByCompanyId(String companyid) {
         return companyRepository.findByCompanyid(companyid)
@@ -17,6 +19,7 @@ public class CompanyService {
     }
 
     public Company create(Company company) {
+        company.setCompanyid(UUID.randomUUID().toString());
         return companyRepository.save(company);
     }
 

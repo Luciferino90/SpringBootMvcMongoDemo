@@ -2,14 +2,16 @@ package it.usuratonkachi.mongomvc.service;
 
 import it.usuratonkachi.mongomvc.domain.entity.User;
 import it.usuratonkachi.mongomvc.domain.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class UserService {
 
-    @Autowired private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public User findByUserId(String userid) {
         return userRepository.findByUserid(userid)
@@ -17,6 +19,7 @@ public class UserService {
     }
 
     public User create(User user) {
+        user.setUserid(UUID.randomUUID().toString());
         return userRepository.save(user);
     }
 

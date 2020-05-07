@@ -12,20 +12,20 @@ import it.usuratonkachi.mongomvc.mapper.CompanyMapper;
 import it.usuratonkachi.mongomvc.mapper.UserMapper;
 import it.usuratonkachi.mongomvc.service.CompanyService;
 import it.usuratonkachi.mongomvc.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @RestController
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class CrudController {
 
-    @Autowired private UserService userService;
-    @Autowired private CompanyService companyService;
-    @Autowired private UserMapper userMapper;
-    @Autowired private CompanyMapper companyMapper;
+    private final UserService userService;
+    private final CompanyService companyService;
+    private final UserMapper userMapper;
+    private final CompanyMapper companyMapper;
 
     @PostMapping(value = "/user/insert", consumes = MediaType.APPLICATION_JSON_VALUE)
     public UserResponseDto insertUser(@RequestBody UserInsertRequestDto req) {
