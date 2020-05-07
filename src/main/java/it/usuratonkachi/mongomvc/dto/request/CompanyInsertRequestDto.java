@@ -1,0 +1,11 @@
+package it.usuratonkachi.mongomvc.dto.request;
+
+import it.usuratonkachi.mongomvc.dto.CompanyBaseDto;
+
+import java.io.Serializable;
+
+public class CompanyInsertRequestDto extends CompanyBaseDto implements Serializable {
+
+    private final static long serialVersionUID = 20200507_2143L;
+
+}
