@@ -6,13 +6,14 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Data
 @Accessors(chain = true)
 @Document(value = "company")
 public class Company implements Serializable {
 
-    private final static long serialVersionUID = 20200507_2146L;
+    private static final long serialVersionUID = 20200507_2146L;
 
     @Id
     private String id;
@@ -21,5 +22,8 @@ public class Company implements Serializable {
     private String businessname;
     private String address;
     private String cap;
+    private Date createddate;
+    private Integer sequentialid;
+    private Long doubleid;
 
 }

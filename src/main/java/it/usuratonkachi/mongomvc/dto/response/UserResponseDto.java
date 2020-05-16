@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Data
 public class UserResponseDto implements Serializable {
 
-    private final static long serialVersionUID = 20200507_2143L;
+    private static final long serialVersionUID = 20200507_2143L;
 
     @NotNull @NotBlank @NotEmpty
     private String userid;

@@ -6,6 +6,6 @@ import java.io.Serializable;
 
 public class UserInsertRequestDto extends UserBaseDto implements Serializable {
 
-    private final static long serialVersionUID = 20200507_2143L;
+    private static final long serialVersionUID = 20200507_2143L;
 
 }

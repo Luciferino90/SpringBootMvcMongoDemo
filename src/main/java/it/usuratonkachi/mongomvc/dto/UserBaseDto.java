@@ -6,11 +6,12 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.Date;
 
 @Data
 public class UserBaseDto implements Serializable {
 
-    private final static long serialVersionUID = 20200507_2143L;
+    private static final long serialVersionUID = 20200507_2143L;
 
     @NotNull @NotBlank @NotEmpty
     private String username;
@@ -20,5 +21,11 @@ public class UserBaseDto implements Serializable {
     private String lastname;
     @NotNull @NotBlank @NotEmpty
     private String companyid;
+    @NotNull
+    private Date createddate;
+    @NotNull
+    private Integer sequentialid;
+    @NotNull
+    private Long doubleid;
 
 }
